@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="01_Spring_Core" />
+        <module name="04_FullModeVsLightMode" />
         <module name="02_Spring_Bean_Lifecycle" />
         <module name="03_Dependancy_Injection" />
+        <module name="01_Spring_Core" />
       </profile>
     </annotationProcessing>
   </component>
