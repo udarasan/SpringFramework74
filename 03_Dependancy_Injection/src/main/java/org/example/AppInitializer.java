@@ -11,6 +11,7 @@ public class AppInitializer {
         context.register(AppConfig.class);
         context.refresh();
         /*Boy boy = context.getBean(Boy.class);
+
         boy.chatWithGirl();*/
 
         TestOne testOne = context.getBean(TestOne.class);
