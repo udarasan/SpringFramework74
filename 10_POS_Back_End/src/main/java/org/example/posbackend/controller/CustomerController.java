@@ -6,6 +6,7 @@ import org.example.posbackend.service.impl.CustomerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api/v1/customer")
 public class CustomerController {
@@ -14,5 +15,10 @@ public class CustomerController {
     @PostMapping
     public void saveCustomer(@RequestBody CustomerDTO customerDTO) {
         customerService.saveCustomer(customerDTO);
+    }
+
+    @PutMapping
+    public void updateCustomer(@RequestBody CustomerDTO customerDTO) {
+        customerService.updateCustomer(customerDTO);
     }
 }
