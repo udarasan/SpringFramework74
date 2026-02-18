@@ -2,6 +2,7 @@ package org.example.posbackend.service.impl;
 
 import org.example.posbackend.dto.CustomerDTO;
 import org.example.posbackend.entity.Customer;
+import org.example.posbackend.exception.CustomException;
 import org.example.posbackend.repository.CustomerRepository;
 import org.example.posbackend.service.CustomerService;
 import org.modelmapper.ModelMapper;
@@ -18,7 +19,10 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void saveCustomer(CustomerDTO customerDTO) {
-       customerRepository.save(modelMapper.map(customerDTO, Customer.class));
+        if (customerDTO == null) {
+            throw new NullPointerException("Customer DTO is null");
+        }
+        customerRepository.save(modelMapper.map(customerDTO, Customer.class));
     }
 
     @Override

@@ -14,7 +14,11 @@ function saveCustomer() {
             cAddress:address
         }),
         success:function (res) {
-            alert('saved!')
+            if (res.status===201){
+                alert(res.message)
+            }else {
+                alert("customer not saved,try again")
+            }
         },
         error:function (err) {
             alert(err.message)
@@ -22,7 +26,7 @@ function saveCustomer() {
     })
 }
 
-function updateCusotmer() {
+function updateCustomer() {
     let id=$('#customerId').val()
     let name=$('#customerName').val()
     let address=$('#customerAddress').val()
